@@ -1,0 +1,195 @@
+#include<iostream>
+using namespace std;
+#define size 5
+template<class type>
+class stack
+{
+        type stk[5];
+        int TOP;
+        public:
+        stack()
+        {
+                TOP = -1;
+        }
+        void push()
+        {
+                if(TOP >= size-1)
+                {
+                        cout << "\033[34m" << "Stack Overflow" << "\033[0m" << endl;
+                        return;
+                }
+                TOP++;
+                cout << "Enter value to push" << endl;
+                cin >> stk[TOP];
+        }
+        void pop()
+        {
+
+                if(TOP <= -1)
+                {
+                        cout << "\033[34m" << "Stack Underflow" << "\033[0m" << endl;
+                        return;
+                }
+                cout << "\033[31mdeleted value " << stk[TOP] << "\033[0m"<< endl;
+                TOP--;
+        }
+        void display()
+        {
+                if(TOP <= -1)
+                {
+                        cout << "\033[34m" << "Stack Empty" << "\033[0m" << endl;
+                }
+                int i;
+                for(i= 0; i <= TOP ; i++)
+                        cout << "\033[32m" << stk[i] << "\033[0m"<< endl;
+        }
+        void clear()
+        {
+                TOP = -1;
+        }
+
+};
+
+
+
+int main()
+{
+        int op1,op2,counter = 0,tyms[5]={0};
+        stack<int> s1;
+        stack<char> s2;
+        stack<float> s3;
+        stack<double> s4;
+        stack<string> s5;
+        while(1)
+        {
+L :
+                cout << "choose the type" << endl;
+                cout << "1.int   2.char   3.float   4.double   5.string   6.exit" << endl;
+                cin >> op1;
+                switch(op1)
+                {
+                        case 1 : counter = 0;
+                                 tyms[0]++;
+                                 if(tyms[0] == 2)
+                                 {
+                                         cout << "\033[32mChoose\n1.continue old stack   2.new stack\033[0m" << endl;
+                                         cin >> op1;
+                                         if(op1 != 1)
+                                                 s1.clear();
+                                         tyms[0]--;
+                                 }
+                                 cout << "\033[34m" << "int stack application ready to use" << "\033[0m" << endl;
+                                 while(1){
+                                         cout << "Choose Operation" << endl;
+                                         cout << "1.push   2.pop   3.display stack   4.Main Menu" << endl;
+                                         cin >> op2;
+                                         switch(op2)
+                                         {
+                                                 case 1:s1.push();    break;
+                                                 case 2:s1.pop();     break;
+                                                 case 3:s1.display(); break;
+                                                 case 4: goto L;
+                                         } }   break;
+                        case 2 : counter = 0;
+                                 tyms[1]++;
+                                 if(tyms[1] == 2)
+                                 {
+                                         cout << "\033[32mChoose\n1.continue old stack   2.new stack\033[0m" << endl;
+                                         cin >> op1;
+                                         if(op1 != 1)
+                                                 s2.clear();
+                                         tyms[1]--;
+                                 }
+                                 cout << "\033[34m" << "char stack application ready to use" << "\033[0m" << endl;
+                                 while(1){
+                                         cout << "Choose Operation" << endl;
+                                         cout << "1.push   2.pop   3.display stack   4.Main Menu" << endl;
+                                         cin >> op2;
+                                         switch(op2)
+                                         {
+                                                 case 1:s2.push();    break;
+                                                 case 2:s2.pop();     break;
+                                                 case 3:s2.display(); break;
+                                                 case 4: goto L;
+                                         } }   break;
+
+                        case 3 : counter = 0;
+                                 tyms[2]++;
+                                 if(tyms[2] == 2)
+                                 {
+                                         cout << "\033[32mChoose\n1.continue old stack   2.new stack\033[0m" << endl;
+                                         cin >> op1;
+                                         if(op1 != 1)
+                                                 s3.clear();
+                                         tyms[2]--;
+                                 }
+                                 cout << "\033[34m" << "float stack application ready to use" << "\033[0m" << endl;
+                                 while(1){
+                                         cout << "Choose Operation" << endl;
+                                         cout << "1.push   2.pop   3.display stack   4.Main Menu" << endl;
+                                         cin >> op2;
+                                         switch(op2)
+                                         {
+                                                 case 1:s3.push();    break;
+                                                 case 2:s3.pop();     break;
+                                                 case 3:s3.display(); break;
+                                                 case 4: goto L;
+                                         } }   break;
+                        case 4 : counter = 0;
+                                 tyms[3]++;
+                                 if(tyms[3] == 2)
+                                 {
+                                         cout << "\033[32mChoose\n1.continue old stack   2.new stack\033[0m" << endl;
+                                         cin >> op1;
+                                         if(op1 != 1)
+                                                 s4.clear();
+                                         tyms[3]--;
+                                 }
+                                cout << "\033[34m" << "double stack application ready to use" << "\033[0m" << endl;
+                                 while(1){
+                                         cout << "Choose Operation" << endl;
+                                         cout << "1.push   2.pop   3.display stack   4.Main Menu" << endl;
+                                         cin >> op2;
+                                         switch(op2)
+                                         {
+                                                 case 1:s4.push();    break;
+                                                 case 2:s4.pop();     break;
+                                                 case 3:s4.display(); break;
+                                                 case 4: goto L;
+                                         } }   break;
+                        case 5 : counter = 0;
+                                 tyms[4]++;
+                                 if(tyms[4] == 2)
+                                 {
+                                         cout << "\033[32mChoose\n1.continue old stack   2.new stack\033[0m" << endl;
+                                         cin >> op1;
+                                         if(op1 != 1)
+                                                 s5.clear();
+                                         tyms[4]--;
+                                 }
+                                 cout << "\033[34m" << "string stack application ready to use" << "\033[0m" << endl;
+                                 while(1){
+                                         cout << "Choose Operation" << endl;
+                                         cout << "1.push   2.pop   3.display stack   4.Main Menu" << endl;
+                                         cin >> op2;
+                                         switch(op2)
+                                         {
+                                                 case 1:s5.push();    break;
+                                                 case 2:s5.pop();     break;
+                                                 case 3:s5.display(); break;
+                                                 case 4: goto L;
+                                         } }   break;
+                        case 6 : exit(1);
+                        default : counter++;
+                                  if(counter == 1)
+                                          cout << "\033[34m" << "Please read the options carefully" << "\033[0m" << endl;
+                                  else if(counter == 2)
+                                          cout << "\033[35mLast Chance Please Take Care\033[0m" << endl;
+                                  else{
+                                          cout << "\033[31mThanks for using our Application please read the manual and comeback properly\033[0m" << endl;
+                                          exit(1);
+                                  }
+                }
+        }
+}
+
